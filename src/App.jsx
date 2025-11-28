@@ -8,6 +8,7 @@ import Section5 from './Components/Section5'
 import Section6 from './Components/Section6'
 import Section7 from './Components/Section7'
 import Section8 from './Components/Section8'
+import Footer from './Components/Footer'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Section6/>
       <Section7/>
       <Section8 />
+      <Footer/>
     </div>
   )
 }
