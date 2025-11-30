@@ -1,35 +1,54 @@
-import React from 'react'
+import React, { useState } from "react";
+import { CiMenuBurger } from "react-icons/ci";
 
-const Nevbar = () => {
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-   <>
-   <div className='flex flex-col md:flex-row justify-between md:justify-around items-center h-auto md:h-26 bg-[#2A4F69] text-white px-4 py-3'>
+    <>
+      <div className="flex items-center justify-between bg-[#2A4F69] text-white px-4 py-3">
 
-    <div className='flex items-center mb-3 md:mb-0'>
-        <img className='h-16 md:h-21' src="logo copy.png" alt="" />
-    </div>
+        <div className="flex items-center">
+          <img className="h-16 md:h-21" src="logo copy.png" alt="" />
+        </div>
 
-    <div className='w-full md:w-auto'>
-        <ul className='border px-4 md:px-6 py-2 rounded-full'>
-            <li className='flex flex-wrap md:flex-nowrap justify-center gap-3 md:gap-5 text-sm md:text-base'>
-
-                <a>Home</a>
-                <a>About US</a>
-                <a>Service</a>
-                <a>Our Clients</a>
-                <a>Our HQ Partners</a>
-                <a>Contact US</a>
-                <a>Blog</a>
-                <a>Events</a>
-
+        <div className="hidden md:block">
+          <ul className="border px-6 py-2 rounded-full">
+            <li className="flex justify-center gap-5">
+              <a>Home</a>
+              <a>About US</a>
+              <a>Service</a>
+              <a>Our Clients</a>
+              <a>Our HQ Partners</a>
+              <a>Contact US</a>
+              <a>Blog</a>
+              <a>Events</a>
             </li>
-        </ul>
-    </div>
+          </ul>
+        </div>
 
-</div>
+        <div className="md:hidden text-2xl" onClick={() => setOpen(!open)}>
+          <CiMenuBurger />
+        </div>
 
-   </>
-  )
-}
+      </div>
 
-export default Nevbar
+      {open && (
+        <div className="md:hidden bg-[#2A4F69] text-white px-6 py-4">
+          <ul className="flex flex-col gap-3 text-center">
+            <a>Home</a>
+            <a>About US</a>
+            <a>Service</a>
+            <a>Our Clients</a>
+            <a>Our HQ Partners</a>
+            <a>Contact US</a>
+            <a>Blog</a>
+            <a>Events</a>
+          </ul>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Navbar;

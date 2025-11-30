@@ -20,7 +20,7 @@ const Section7 = () => {
   </div>
   <div className='flex flex-col lg:flex-row mt-10 gap-10 lg:gap-30 items-center'>
 
-    <img className='w-full max-w-[400px] lg:max-w-none' src="group3.svg" alt="" />
+    <img className=' lg:max-w-none' src="group3.svg" alt="" />
 
     <div>
       <p className='text-[#6293B1] text-[40px] sm:text-[50px] lg:text-[64px] font-[700] lg:mt-25 text-center lg:text-left'>
